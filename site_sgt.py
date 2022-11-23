@@ -1,7 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 """
 - Flask: responsável pela conexão da aplicação com o servidor
 - render_template: permite renderizar modelos, como, por exemplo, as páginas HTML
+- url_for(): permite a interação entre as páginas HTML com a página principal
 """
 
 app = Flask(__name__)  # Aplicativo Flask
@@ -27,6 +28,8 @@ def pem():
 def midia():
     """
     Página 3, nela será apresentada as mídias da equipe.
+    OBS: Colocar um campo de inserção de mídia.
+    OBS: Colocar um campo de inserção de mídia.
     :return: página 3
     """
     return render_template("midia.html")
