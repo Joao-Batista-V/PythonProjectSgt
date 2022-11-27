@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <!-- Carousel -->
+    <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+        <!-- Imgem mangue 1 -->
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img class="d-block w-100 img-fluid" src="{{url_for('static', filename='images/mangue1.jpg')}}" aria-hidden="true" alt="Manguezal 1">        
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>Bem vindos á um mundo de inovações</h1>
+                        <p>Sagittarius A*, uma equipe que visa a preservação do meio ambiente e um mundo ecológico.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Imagem mangue 2 -->
+            <div class="carousel-item">
+                <img class="d-block w-100 img-fluid" src="{{url_for('static', filename='images/mangue2.jpg')}}" aria-hidden="true" alt="Manguezal 2">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>PEM - I</h1>
+                        <p>Missão: Preservação do Ecossistema Manguezal I</p>
+                        <p><a class="btn btn-lg btn-success" href="{{url_for('pem')}}">PEM - I</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Imagem mangue 3 -->
+            <div class="carousel-item">
+                <img class="d-block w-100 img-fluid" src="{{url_for('static', filename='images/mangue3.jpg')}}" aria-hidden="true" alt="Manguezal 3">
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <h1>Na Mídia</h1>
+                        <p>Conheça um pouquinho mais sobre nós.</p>
+                        <p><a class="btn btn-lg btn-success" href="{{url_for('midia')}}">Mídia</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- Fim carousel -->
+    
+    <!-- featurettes -->
+    <div class="container marketing">
+        
+        <!-- Descrição da equipe -->
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">QUEM SOMOS?</h2>
+                <p class="lead">Nossa equipe desenvolve tecnologias visando a preservação do meio ambiente e um mundo ecológico. Promovendo projetos dentro do setor tecnológico e ambiental. Sagittarius A* foi criada em 2021 com o objetivo de participar da Olimpíada Brasileira de Satélites - MCTI. A equipe fez diversas pesquisas científicas e agora o projeto continua se expandindo e trazendo novas contribuições para ciência.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="img-fluid" src="{{url_for('static', filename='images/equipe_biblioteca.jpg')}}" aria-hidden="true" alt="Equipe na biblioteca">
+            </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">NOSSA EQUIPE</span></h2>
+                <p class="lead">A equipe é composta por quatro integrantes do Colégio de Aplicação da Universidade Federal de Santa Catarina. Isabella de Freitas Gonçalves, João Vitor Caetano da Rosa, Marcos Inácio Bueno e Rosa Maria Pereira Miranda e o mentor João Batista Vieira Sousa, graduando de física da UFSC.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img class="img-fluid" src="{{url_for('static', filename='images/equipe_laboratorio.jpg')}}" aria-hidden="true" alt="Equipe no laboratorio">    
+            </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <!-- Fim Descrição da equipe -->
+    </div>
+{% endblock conteudo %}

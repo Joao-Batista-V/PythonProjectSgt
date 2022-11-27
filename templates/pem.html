@@ -1,4 +1,38 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-<h2 style="text-align: center;">PEM</h2>
+    <!-- featurettes -->
+    <div class="container marketing">
+    
+        <hr class="featurette-divider">
+        
+        <!-- Descrição da Missão -->
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Missão: Preservação do Ecossistema Manguezal I</h2>
+                <p class="lead">Nosso projeto tem como objetivo evidenciar a relevância do ecossistema manguezal para o combate às mudanças climáticas. Após realizamos pesquisas sobre o ecossistema e sua notável presença no sequestro de gás carbônico, projetamos e construímos um satélite, modelo CanSat, para quantificar os níveis de CO2 presente na estratosfera em cima de Manguezais e de outros tipos de florestas. Trazendo, então, um comparativo entre elas e determinando o impacto da urbanização e possíveis consequências para o local. </p>
+            </div>
+            <div class="col-md-5">
+                <img class="img-fluid" src="{{url_for('static', filename='images/logotipo_da_missao.png')}}" aria-hidden="true" alt="Logo da missão" id="img_logo_redonda">
+            </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <!-- Descrição do funcionamento do satélite -->
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Como funciona o satélite?</span></h2>
+                <p class="lead">O principal sensor do satélite é o sensor de CO2, entretanto, para que pudesse funcionar corretamente quando lançado para atmosfera, é presente também o giroscópio, magnetômetro, acelerômetro, sensor de umidade, pressão e temperatura e por fim, a bateria, a qual foi isolada com um plástico térmico Polietileno para suportar temperaturas extremas. A programação foi feita em blocos pela plataforma PIBBES. Os dados podem ser acompanhados em tempo real e são armazenados em um chip CD.</p> 
+                <p class="lead">Criamos uma solução para caso o satélite não fosse recuperado após o lançamento, além do esperado pela OBSAT, enviamos também os dados necessários para nossa pesquisa (dados de CO2) via telemetria para o servidor da Olimpíada. Assim, o projeto não correria o risco de ficar com falta de dados.</p>
+            </div>
+            <!-- Slides do satélite -->
+            <div class="col-md-5 order-md-1">
+                <img class="img-fluid" src="{{url_for('static', filename='images/equipe_laboratorio.jpg')}}" aria-hidden="true" alt="Equipe no laboratorio">    
+            </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    
+        <!-- Fim Descrição da equipe -->
+    </div>
 {% endblock conteudo %}

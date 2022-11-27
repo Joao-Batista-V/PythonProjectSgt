@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for
+
 """
 - Flask: responsável pela conexão da aplicação com o servidor
 - render_template: permite renderizar modelos, como, por exemplo, as páginas HTML
@@ -7,13 +8,13 @@ from flask import Flask, render_template, url_for
 
 app = Flask(__name__)  # Aplicativo Flask
 
-@app.route('/')
-def homepage():
+@app.route('/sobre')
+def sobre():
     """
     Página inicial, nela será apresentado detalhes sobre o projeto e  sobre a equipe.
     :return: página principal
     """
-    return render_template("homepage.html")
+    return render_template("sobre.html")
 
 @app.route('/pem')
 def pem():
@@ -34,8 +35,8 @@ def midia():
     """
     return render_template("midia.html")
 
-@app.route('/entre_em_contato')
-def entre_em_contato():  # Neste módulo será implementado um sistema de formulários
+@app.route('/contato')
+def contato():  # Neste módulo será implementado um sistema de formulários
     pass
 
 if __name__ == "__main__":  # Bloco de execusão do código principal. A função debug retornará eventuais erros
