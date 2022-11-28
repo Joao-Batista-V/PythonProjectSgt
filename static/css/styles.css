@@ -204,6 +204,12 @@ body {
 /* CSS da página 'midia' */
 
 #row_midia img {
-    width: 350px;
-    height: 275px;    
+    width: 300px;
+    height: 225px;
+    border-radius: 5px;    
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 25px;
 }
