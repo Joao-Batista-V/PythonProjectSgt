@@ -190,7 +190,7 @@ body {
     justify-content: center;
 }
 
-
+/* Alinhamento de texto e imagem */
 #row_featurette {
     display: flex;
     align-items: center;
@@ -199,4 +199,11 @@ body {
 #row_featurette img {
     height: 400px;
     border-radius: 1%;
+}
+
+/* CSS da página 'midia' */
+
+#row_midia img {
+    width: 350px;
+    height: 275px;    
 }

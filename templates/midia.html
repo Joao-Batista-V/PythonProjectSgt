@@ -1,4 +1,47 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h1>Midia</h1>
+    <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <hr class="featurette-divider">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row" id="row_midia">
+      <!-- Notícia 1 -->
+      <div class="col-lg-3">
+        <img class="img-fluid" src="{{url_for('static', filename='images/satelite1.png')}}" aria-hidden="true" alt="Satelite">
+        <h2>Notícias da UFSC</h2>
+        <p>Alunos do Colégio de Aplicação participam da 1ª Olimpíada Brasileira de Satélites</p>
+        <p><a class="btn btn-secondary" href="https://noticias.ufsc.br/2021/06/alunos-do-colegio-de-aplicacao-participam-da-1a-olimpiada-brasileira-de-satelites/" target="_blank">Ir para notícia &raquo;</a></p>
+      </div>
+      
+      <!-- Notícia 2 -->
+      <div class="col-lg-3">
+        <img class="img-fluid" src="{{url_for('static', filename='images/equipe_na_obsat.jpg')}}" aria-hidden="true" alt="Equipe Sagittarius A*">
+        <h2>Notícias da UFSC</h2>
+        <p>Equipe do Colégio de Aplicação conquista segundo lugar na etapa regional da Olimpíada Brasileira de Satélites</p>
+        <p><a class="btn btn-secondary" href="https://noticias.ufsc.br/tags/satelite/" target="_blank">Ir para notícia &raquo;</a></p>
+      </div>
+      
+      <!-- Notícia 3 -->
+      <div class="col-lg-3">
+        <img class="img-fluid" src="{{url_for('static', filename='images/logotipo_da_missao.png')}}" aria-hidden="true" alt="Logo da missão">
+        <h2>Notícias da UFSC</h2>
+        <p>Semifinalista da Olimpíada Brasileira, equipe do Colégio de Aplicação concorre a oportunidade de lançar satélite próprio</p>
+        <p><a class="btn btn-secondary" href="https://noticias.ufsc.br/2022/08/semifinalista-da-olimpiada-brasileira-equipe-do-colegio-de-aplicacao-da-ufsc-vai-lancar-satelite-proprio/" target="_blank">Ir para notícia &raquo;</a></p>
+      </div>
+      
+      <!-- Notícia 4 -->
+      <div class="col-lg-3">
+        <img class="img-fluid" src="{{url_for('static', filename='images/satelite1.png')}}" aria-hidden="true" alt="Satelite">
+        <h2>SCC10</h2>
+        <p>Equipe do Colégio de Aplicação da UFSC vai lançar satélite próprio</p>
+        <p><a class="btn btn-secondary" href="https://scc10.com.br/cotidiano/equipe-do-colegio-de-aplicacao-da-ufsc-vai-lancar-satelite-proprio/" target="_blank">Ir para notícia &raquo;</a></p>
+      </div>
+    </div><!-- /.row -->
+
+  </div><!-- /.container -->
 {% endblock conteudo %}
