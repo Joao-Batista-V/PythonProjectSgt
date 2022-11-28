@@ -10,8 +10,12 @@
 /* Navbar */
 
 #navbar {
-    background-color: #00CD66;
+    background-color: #0c6f5c;
+    /* background-color: #00CD66; */
+}
 
+#navbarCollapse a {
+    text-shadow: 1px 2px 5px rgb(39, 39, 39);
 }
 
 #navbar .nav-link {
@@ -113,10 +117,11 @@ body {
         position: absolute;
         top: 0;
         left: 0;
-        min-width: 100%;
+        min-width: 200%;
         height: 32rem;
     }
 }
+
 
 #myCarousel .btn {
     background-color: #00CD66;
