@@ -27,12 +27,109 @@
             </div>
             <!-- Slides do satélite -->
             <div class="col-md-5 order-md-1">
-                <img class="img-fluid" src="{{url_for('static', filename='images/equipe_laboratorio.jpg')}}" aria-hidden="true" alt="Equipe no laboratorio">    
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <!-- Imagem do Satélite 1 -->
+                      <div class="carousel-item active">
+                        <img src="{{url_for('static', filename='images/sat1.jpeg')}}" class="d-block w-100 img-fluid" alt="Imagem do Satélite 1">
+                      </div>
+                      <!-- Imagem do Satélite 2 -->
+                      <div class="carousel-item">
+                        <img src="{{url_for('static', filename='images/sat2.jpeg')}}" class="d-block w-100 img-fluid" alt="Imagem do Satélite 2">
+                      </div>
+                      <!-- Imagem do Satélite 2 -->
+                      <div class="carousel-item">
+                        <img src="{{url_for('static', filename='images/sat3.jpeg')}}" class="d-block w-100 img-fluid" alt="Imagem do Satélite 3">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                
+                
+                <!-- <img class="img-fluid" src="{{url_for('static', filename='images/equipe_laboratorio.jpg')}}" aria-hidden="true" alt="Equipe no laboratorio">     -->
             </div>
         </div>
-    
-        <hr class="featurette-divider">
-    
         <!-- Fim Descrição da equipe -->
+        <hr class="featurette-divider">
+
+        <section class="text-center container">
+            <div class="row py-lg-1">
+              <div class="col-lg-8 col-md-8 mx-auto">
+                <h1 class="fw-light">Fases da Olimpíada Brasileira de Satélites - MCTI 2021/2022</h1>
+                <p class="lead text-muted">A Olimpíada Brasileira de Satélites MCTI é uma Olimpíada Científica de abrangência nacional, concebida pelo Ministério da Ciência, Tecnologia e Inovações, e organizada pela Universidade Federal de São Carlos (UFSCar) em conjunto com a Agência Espacial Brasileira(AEB/MCTI), o Instituto Nacional de Pesquisas Espaciais(INPE/MCTI) e a Escola de Engenharia de São Carlos  (EESC), da Universidade de São Paulo (USP).</p>
+              </div>
+            </div>
+        </section>
+        <!-- Descrição das fases da olimpíada -->
+        <div class="album py-5 bg-light" id="album_fases">
+            <div class="container">
+        
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <!-- Thum 1 -->
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">Primeira Fase - Proposta de finalidade</div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>A primeira fase da OBSAT consiste na equipe propor uma finalidade inovadora e viável para um CanSat (satélite educacional). Ela é totalmente on-line, onde a forma de avaliação é um documento detalhando todos os objetivos de missão e explicando os subsistemas do satélite. A equipe Sagittarius A*  foi aprovada em segundo lugar na estadual do N1 (Ensino Fundamental II).</p>
+                                </blockquote>
+                            </div>
+                      </div>
+                </div>
+                
+                <!-- Thumb 2-->
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">Segunda Fase - Construindo o satélite</div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>Após receber o Kit CanSat, disponibilizado pela Olimpíada, passamos a projetá-lo e a programá-lo. A forma de avaliação da segunda fase foi um documento com todos os detalhes técnicos e operacionais, relatórios, fotografias do CanSat… Ademais, um vídeo com todos os membros da equipe explicando sobre a missão e o satélite. Fomos aprovados para a fase Regional.</p>
+                                </blockquote>
+                            </div>
+                      </div>
+                </div>
+                <!-- Thum 3 -->
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">Terceira Fase - Lançamento</div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>A final aconteceu no tecnoparque de Santa Maria no Rio Grande do Sul. Felizmente, conseguimos ir graças ao público que nos apoiou através de uma vaquinha. Partimos de Florianópolis na manhã do dia 12 de agosto de 2022 e voltamos no dia 14 de agosto. Totalizando 20 horas de viagem. Ficamos no alojamento da Universidade Federal de Santa Maria. No evento, nosso satélite passou por todos os testes físicos, incluindo o teste de robustez mecânica e eletrônica, teste de telemetria e de temperatura, sendo aprovado em todos. Depois ocorreu os Pitchs, onde cada equipe fez uma breve apresentação sobre o seu projeto para o público e para o júri. Logo saíram os resultados, nossa equipe ficou classificada em segundo lugar da região Sul. E no fim da tarde, o lançamento dos satélites com primeiro lugar na N1, N2 e N3.</p>
+                                </blockquote>
+                            </div>
+                      </div>
+                </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- featurettes -->
+        <div class="container marketing">
+            
+            <!-- Descrição da equipe -->
+        
+            <hr class="featurette-divider">
+        
+            <div class="row featurette" id="row_featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">Manguezal</h2>
+                    <p class="lead">O ecossistema manguezal é um dos principais combatentes ao efeito estufa, o que implica nas alterações climáticas. O solo do manguezal é úmido e rico em nutrientes, em sua produção de biomassa, ele realiza uma captura de carbono (blue carbon) muito maior que outros ecossistemas, como a Mata Atlântica e Caatinga. “Percebe-se que a degradação empobrece o mangue, tanto na abundância e quanto no porte das espécies. Isso tem reflexo na biomassa e, consequentemente, na quantidade de carbono que esta árvore pode estocar. Então, o lixo, aterros, retirada de madeira dificultam que o manguezal preste este importante serviço de sequestrar e estocar o carbono. Caso contrário, este carbono fica livre na natureza poluindo, aquecendo a terra, modificando a maré e tudo mais que estamos experienciando atualmente na terra” Coloca a doutora Alessandra Nasser Caiafa, professora de biologia vegetal da Universidade Federal do Recôncavo da Bahia (UFRB) em uma pesquisa sobre o assunto.</p>
+                </div>
+                <div class="col-md-5" id="img_mangue">
+                    <img class="img-fluid" src="{{url_for('static', filename='images/mangue1.jpg')}}" aria-hidden="true" alt="Equipe na biblioteca">
+                </div>
+            </div>
+        
+            <hr class="featurette-divider">
+        
+            <!-- Fim Descrição da equipe -->
+        </div>
     </div>
 {% endblock conteudo %}
