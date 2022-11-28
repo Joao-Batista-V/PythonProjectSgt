@@ -37,7 +37,7 @@ def midia():
 
 @app.route('/contato')
 def contato():  # Neste módulo será implementado um sistema de formulários
-    pass
+    return render_template("contato.html")
 
 if __name__ == "__main__":  # Bloco de execusão do código principal. A função debug retornará eventuais erros
     app.run(debug=True)

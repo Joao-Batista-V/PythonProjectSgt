@@ -11,6 +11,7 @@
 
 #navbar {
     background-color: #00CD66;
+
 }
 
 #navbar .nav-link {
@@ -212,4 +213,108 @@ body {
 h3 {
     font-weight: 400;
     font-size: 25px;
+}
+
+/* CSS da página 'contato' */
+
+/* FORM */
+#form-container {
+    background-color: #FFF;
+    border-radius: 20px;
+    box-shadow: .5px 10px 15px rgba(0, 0, 0, .2); 
+    margin: 25px auto;
+    padding: 25px;
+}
+
+/* H2 */
+#form-container h2 {
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+/* Links */
+#form-container a {
+    color: #222;
+    transition: .5s;
+}
+
+#form-container a:hover {
+    color: #00CD66;
+}
+
+#form-container form {
+    padding-bottom: 0px;
+}
+
+/* Campos de usuário e senha */
+#form-container .form-control {
+    border: none;
+    border-bottom: 1px solid #CCC;
+    border-radius: 0;
+}
+
+/* Sem bordas ao passar com o mouse nos campso de usuário e senha */
+#form-container .form-control:focus {
+    box-shadow: none;  
+}
+
+/* Cores dos textos de usuário e senha */
+#form-container .form-floating label {
+    color: #CCC;
+}
+
+/* Ao clicar nos campos de usuário e senha a cor é altereada, ficando mais escura*/
+#form-container .form-floating > .form-control:focus~label {
+    color: #222;
+}
+
+/* Cor do botão 'entrar' */
+#form-container input[type="submit"],
+#form-container input[type="checkbox"]:checked {
+    background-color: #00CD66;
+    border-color: #00CD66;
+}
+
+/* IMAGE */
+.row.align-items-center {
+    align-content: center;
+    height: 100%;
+    padding: 75px 0;
+}
+
+/* Link 'Ainda não tenho cadastro' */
+#link-container {
+    text-align: center;
+    padding-top: 50px;
+}
+
+
+/* ALTERAÇÕES PARA MOBILE */
+
+/* Para o botão ocupar 100% do espaço */
+.btn.btn-primary {
+    width: 100%;
+    margin-top: 25px;
+}
+
+/* Ajuste da imagem */
+.col-md-6.order-md-1 {
+    padding-top: 50px;
+}
+
+@media(min-width: 768px) {
+    #form-container {
+        margin: 50px auto;
+        padding: 50px;
+    }
+
+    /* Definindo o tamanho de 100% apenas para mobile */
+    .btn.btn-primary {
+        width: auto;
+    }
+
+    /* Ajuste da imagem */
+    .col-md-6.order-md-1 {
+        padding-top: 0;
+    }
 }
