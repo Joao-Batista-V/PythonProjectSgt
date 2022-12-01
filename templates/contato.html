@@ -4,17 +4,17 @@
         <div class="row gx-5">
             <div class="col-md-6">
                 <h2>Entre em contato</h2>
-                <form>
+                <form action="{{url_for('contato')}}" method="POST" class="form-control">
                     <!-- Nome -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Digite o seu nome" required>
+                        <input type="text" class="form-control" id="name" name="nome" placeholder="Digite o seu nome" required>
                         <label for="name" class="form-label">Digite o seu nome</label>
                     </div>
-                    <!-- Sobrenome -->
-                    <div class="form-floating mb-3">
+                    <!-- Campo de Sobrenome será opcional -->
+                    <!-- <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Digite o seu sobrenome" required>
                         <label for="lastname" class="form-label">Digite o seu sobrenome</label>
-                    </div>
+                    </div> -->
                     <!-- email -->
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Digite o seu e-mail" required>
@@ -23,7 +23,7 @@
 
                     <!-- Mensagem -->
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="mensagem" style="height: 100px"></textarea>
                         <label for="floatingTextarea2">Mensagem</label>
                     </div>
 
