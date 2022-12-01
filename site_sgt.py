@@ -24,7 +24,7 @@ class tb_contato(db.Model):
         self.email = email
         self.mensagem = mensagem
 
-@app.route('/sobre')
+@app.route('/')
 def sobre():
     """
     Página inicial, nela será apresentado detalhes sobre o projeto e  sobre a equipe.
