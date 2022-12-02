@@ -19,41 +19,15 @@
         <hr class="featurette-divider">
     
         <!-- Descrição do funcionamento do satélite -->
-        <div class="row featurette">
+        <div class="row featurette" id="row_sat">
             <div class="col-md-7 order-md-2">
                 <h2 class="featurette-heading">Como funciona o satélite?</span></h2>
                 <p class="lead">O principal sensor do satélite é o sensor de CO2, entretanto, para que pudesse funcionar corretamente quando lançado para atmosfera, é presente também o giroscópio, magnetômetro, acelerômetro, sensor de umidade, pressão e temperatura e por fim, a bateria, a qual foi isolada com um plástico térmico Polietileno para suportar temperaturas extremas. A programação foi feita em blocos pela plataforma PIBBES. Os dados podem ser acompanhados em tempo real e são armazenados em um chip CD.</p> 
                 <p class="lead">Criamos uma solução para caso o satélite não fosse recuperado após o lançamento, além do esperado pela OBSAT, enviamos também os dados necessários para nossa pesquisa (dados de CO2) via telemetria para o servidor da Olimpíada. Assim, o projeto não correria o risco de ficar com falta de dados.</p>
             </div>
-            <!-- Slides do satélite -->
+            <!-- Imagem do satélite -->
             <div class="col-md-5 order-md-1">
-                <div id="carouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <!-- Imagem do Satélite 1 -->
-                      <div class="carousel-item active">
-                        <img src="{{url_for('static', filename='images/sat1.jpeg')}}" class="d-block w-100 img-fluid" alt="Imagem do Satélite 1">
-                      </div>
-                      <!-- Imagem do Satélite 2 -->
-                      <div class="carousel-item">
-                        <img src="{{url_for('static', filename='images/sat2.jpeg')}}" class="d-block w-100 img-fluid" alt="Imagem do Satélite 2">
-                      </div>
-                      <!-- Imagem do Satélite 2 -->
-                      <div class="carousel-item">
-                        <img src="{{url_for('static', filename='images/sat3.jpeg')}}" class="d-block w-100 img-fluid" alt="Imagem do Satélite 3">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselFade" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Próximo</span>
-                    </button>
-                  </div>
-                
-                
-                <!-- <img class="img-fluid" src="{{url_for('static', filename='images/equipe_laboratorio.jpg')}}" aria-hidden="true" alt="Equipe no laboratorio">     -->
+                <img class="img-fluid" src="{{url_for('static', filename='images/sat1.jpeg')}}" aria-hidden="true" alt="Equipe no laboratorio">    
             </div>
         </div>
         <!-- Fim Descrição da equipe -->
@@ -122,8 +96,8 @@
                     <h2 class="featurette-heading">Manguezal</h2>
                     <p class="lead">O ecossistema manguezal é um dos principais combatentes ao efeito estufa, o que implica nas alterações climáticas. O solo do manguezal é úmido e rico em nutrientes, em sua produção de biomassa, ele realiza uma captura de carbono (blue carbon) muito maior que outros ecossistemas, como a Mata Atlântica e Caatinga. “Percebe-se que a degradação empobrece o mangue, tanto na abundância e quanto no porte das espécies. Isso tem reflexo na biomassa e, consequentemente, na quantidade de carbono que esta árvore pode estocar. Então, o lixo, aterros, retirada de madeira dificultam que o manguezal preste este importante serviço de sequestrar e estocar o carbono. Caso contrário, este carbono fica livre na natureza poluindo, aquecendo a terra, modificando a maré e tudo mais que estamos experienciando atualmente na terra” Coloca a doutora Alessandra Nasser Caiafa, professora de biologia vegetal da Universidade Federal do Recôncavo da Bahia (UFRB) em uma pesquisa sobre o assunto.</p>
                 </div>
-                <div class="col-md-5" id="img_mangue">
-                    <img class="img-fluid" src="{{url_for('static', filename='images/mangue1.jpg')}}" aria-hidden="true" alt="Equipe na biblioteca">
+                <div class="col-md-5">
+                    <img class="img-fluid" src="{{url_for('static', filename='images/mangue4.jpg')}}" aria-hidden="true" alt="Equipe na biblioteca">
                 </div>
             </div>
             <!-- Fim Descrição da equipe -->

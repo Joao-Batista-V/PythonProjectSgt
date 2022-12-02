@@ -173,18 +173,18 @@ body {
 }
 
 /* Alinhamento de texto e imagem */
-#coraouselFade,
+#row_sat,
 #row_featurette {
     display: flex;
     align-items: center;
 }
 
-#carouselFade img,
+#row_sat img,
 #row_featurette img {
-    height: 400px;
+    height: 350px;
+    width: 450px;
     border-radius: 1%;
 }
-
 
 /* CSS da página 'midia' */
 
