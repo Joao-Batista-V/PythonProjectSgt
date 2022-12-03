@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block conteudo %}
+	<hr>
+	<h2 style="text-align: center;">Mensagens</h2>
+	<hr>
+	<div class="table-responsive px-2">
+		<table class="table table-bordered table-hover">
+			<thead class="table-success">
+				<tr>
+				  <th scope="col">Id</th>
+				  <th scope="col">Nome</th>
+				  <th scope="col">e-mail</th>
+				  <th scope="col">Mensagem</th>
+				</tr>
+		  </thead>
+		  <tbody>
+			  {% for contato in contatos %}
+			  <tr>
+				  <td>{{contato.id}}</td>
+				  <td>{{contato.nome}}</td>
+				  <td>{{contato.email}}</td>
+				  <td>{{contato.mensagem}}</td>
+			  </tr>
+			  {% endfor %}
+		  </tbody>
+		</table>
+	</div>
+{% endblock conteudo %}

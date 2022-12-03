@@ -63,6 +63,10 @@ def contato():  # Neste módulo será implementado um sistema de formulários
         db.session.commit()
     return render_template("contato.html")
 
+# Caixa de mensagens
+@app.route('/secret_contatos')
+def lista_contatos():
+    return render_template("contatos.html", contatos=tb_contato.query.all())  # contatos_i usada para iterar na pagina html
 
 with app.app_context():
     db.create_all()
