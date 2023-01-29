@@ -1,28 +1,75 @@
-from flask import Flask, render_template, url_for, request, flash
+from flask import Flask, render_template, url_for, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin, LoginManager, login_user, logout_user, login_required
+from werkzeug.security import generate_password_hash, check_password_hash
 
-"""
-- Flask: responsável pela conexão da aplicação com o servidor
-- render_template: permite renderizar modelos, como, por exemplo, as páginas HTML
-- url_for(): permite a interação entre as páginas HTML com a página principal
-"""
 
 app = Flask(__name__)  # Aplicativo Flask
-
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db_contatos.sqlite3'
-
 db = SQLAlchemy(app)
 
-# Banco de dados db_contato
+# Configuração para a autenticação de usuário
+login_manager = LoginManager()
+login_manager.init_app(app)
+# Criação da tabela User
+@login_manager.user_loader  # usado para recarregar o id do usuário autenticado
+def load_user(user_id):
+    return User.query.filter_by(id=user_id).first()
+
+
+# Tabela para o banco de dados
 class tb_contato(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(50))
     email = db.Column(db.String(50))
     mensagem = db.Column(db.String(200))
+
     def __init__(self, nome, email, mensagem):
         self.nome = nome
         self.email = email
         self.mensagem = mensagem
+
+# Configurações para o Banco de dados e criação dda tabela User
+class User(db.Model, UserMixin):
+    __tablename__ = "Usuarios"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    name = db.Column(db.String(50), nullable=False)
+    user = db.Column(db.String(20), nullable=False, unique=True)
+    password = db.Column(db.String(255), nullable=False)
+    status = db.Column(db.Integer, nullable=False, default=1)  # Verifica se o funcionário está habilitado
+
+    def __init__(self, name, user, password, status):
+        self.name = name
+        self.user = user
+        self.password = generate_password_hash(password)
+        self.status = status
+
+with app.app_context():
+    db.create_all()
+
+    # Comando para adicionar um usuário padrão ao criar o banco de dados
+    if User.query.filter_by(user='administrador').count() < 1:
+        user = User(name='Administrador', user='administrador', password='FisicaQuantica*', status=1)
+        db.session.add(user)
+        db.session.commit()
+
+
+# Login
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        usuario = request.form['usuario']
+        senha = request.form["senha"]
+        user = User.query.filter_by(user=usuario).first()
+        if not user or not check_password_hash(user.password, senha):  # Verificação de usuário e senha na db
+            flash("Usuário ou senha inválido!")
+        elif user.status == 1:
+            login_user(user)
+            return redirect(url_for('pagina_inicial'))
+        else:
+            flash("Usuário inválido")
+    return render_template('login.html')
+
 
 @app.route('/')
 def sobre():
@@ -68,8 +115,6 @@ def contato():  # Neste módulo será implementado um sistema de formulários
 def lista_contatos():
     return render_template("contatos.html", contatos=tb_contato.query.all())  # contatos_i usada para iterar na pagina html
 
-with app.app_context():
-    db.create_all()
 
 if __name__ == "__main__":  # Bloco de execusão do código principal. A função debug retornará eventuais erros
     app.run(debug=True)

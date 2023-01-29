@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block conteudo %}
+
+    <div class="container col-11 col-md-9" id="form-container">
+        <div class="row align-items-center gx-5">
+            <div class="col-md-6 order-md-2">
+                <h2>Faça o login para continuar</h2>
+
+                {% for mensagem in get_flashed_messages() %}
+                    <div class="alert alert-danger">
+                        {{mensagem}}
+                    </div>
+                {%- endfor %}
+                <form action="/login" method="POST">
+
+                    <!-- Campo de inclusão do usuário -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="user" name="usuario" placeholder="Digite o seu usuário" required>
+                        <label for="user" class="form-label">Digite o seu usuário</label>
+                    </div>
+
+                    <!-- Campo de inclusão da senha -->
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="password" name="senha" placeholder="Digite a sua senha" required>
+                        <label for="password" class="form-label">Digite a sua senha</label>
+                    </div>
+
+                    <!-- Botão de envio -->
+                    <input type="submit" class="btn btn-primary" value="entrar">
+                </form>
+            </div>
+
+            <!-- Imagem sing -->
+            <div class="col-md-6 order-md-1" id="img_sind">
+                <div class="col-12">
+                    <img src="{{url_for('static', filename='images/login.svg')}}" alt="Entrar no sistema" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock conteudo %}
