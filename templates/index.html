@@ -51,9 +51,22 @@
 					<a class="nav-link" aria-current="page" href="{{url_for('contato')}}">Contato</a>
 				  </li>
 			  </ul>
+			  {% if not current_user.is_authenticated %}
 			  <form class="d-flex">
-				  <a class="nav-link" href="{{url_for('login')}}"><img src="{{url_for('static', filename='images/icon_login.png')}}" alt="Logina"> Login</a>
+				  <a class="nav-link" href="{{url_for('login')}}"><img src="{{url_for('static', filename='images/icon_login.png')}}" alt="Login"> Login</a>
 			  </form>
+			  {% elif current_user.is_authenticated %}
+                  <form class="d-flex">
+                    <a class="nav-link" href="{{url_for('pagina_inicial')}}"><img src="{{url_for('static', filename='images/icon_user.png')}}" alt="Logoff">
+                        Bem vindo {{ current_user.name }}
+                    </a>
+				  </form>
+				  <form class="d-flex">
+                    <a class="nav-link" href="{{url_for('login')}}"><img src="{{url_for('static', filename='images/icon_login.png')}}" alt="Logoff"> Logoff</a>
+                  </form>
+              {% else %}
+                  {{ current_user }}
+			  {% endif %}
 			</div>
 		  </div>
 		</nav>
