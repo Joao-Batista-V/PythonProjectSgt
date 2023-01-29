@@ -223,3 +223,7 @@ h3{
     max-height: 30rem;
     width: auto;
 }
+
+#content_home .collapse.navbar-collapse {
+    
+}

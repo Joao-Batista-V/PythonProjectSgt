@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sagittarius A*</title>
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous" defer></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+	<!-- CSS ExactTime -->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Josefin+Sans:wght@100&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+	<!-- Fav icon -->
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/sat_icon.svg')}}" type="image/x-icon">
+	<!--script src="../assets/dist/js/bootstrap.bundle.min.js" defer></script-->
+
+</head>
+<body>
+  <div id="home">
+    <div id="content_home">
+	  <!-- Navbar -->
+      <header>
+          <nav class="navbar navbar-expand-lg bg-color fixed-top  bg-gradient py-3 " id="navbar">
+            <div class="container-fluid">
+              <img src="{{url_for('static', filename='images/planet.png')}}" alt="Icone Planeta">
+              <a class="navbar-brand me-2 ms-2" href="#">Sagittarius A*</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0"></ul>
+                <form class="d-flex">
+                  <a class="nav-link" href="#"><img src="{{url_for('static', filename='images/icon_user.png')}}" alt="Logoff"> 
+                    {% if current_user.is_authenticated %}
+                        Bem vindo {{ current_user.name }}
+                    {% else %}
+                        {{ current_user }}
+                    {% endif %}
+                  </a>
+              </form>
+                <form class="d-flex">
+                    <a class="nav-link" href="{{url_for('login')}}"><img src="{{url_for('static', filename='images/icon_login.png')}}" alt="Logoff"> Logoff</a>
+                </form>
+              </div>
+            </div>
+          </nav>
+      </header>
+      <!-- Fim Navbar -->
+      <hr>
+
+      <div class="container" id="form-container">
+
+      <h2 style="text-align: center;">Mensagens</h2>
+      <hr>
+      <div class="table-responsive px-2">
+          <table class="table table-bordered table-hover">
+              <thead class="table-success">
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">e-mail</th>
+                    <th scope="col">Mensagem</th>
+                  </tr>
+            </thead>
+            <tbody>
+                {% for contato in contatos %}
+                <tr>
+                    <td>{{contato.id}}</td>
+                    <td>{{contato.nome}}</td>
+                    <td>{{contato.email}}</td>
+                    <td>{{contato.mensagem}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+      </div>
+
+    </div>
+      <hr class="featurette-divider">
+      <!-- FOOTER -->
+      <footer class="container" id="footer">
+          <p class="float-end"><a href="#">Ir para o topo</a></p>
+          <p>&copy; 2022 Sagittarius A* &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+  </div>
+</body>
+</html>

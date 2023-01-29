@@ -6,7 +6,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)  # Aplicativo Flask
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db_contatos.sqlite3'
+# Configuração da chave secreta
+app.config['SECRET_KEY'] = 'secret'
+
 db = SQLAlchemy(app)
+
+# chave para o 'secret key' da função 'flash'
+app.secret_key = "super secret key"
 
 # Configuração para a autenticação de usuário
 login_manager = LoginManager()
@@ -71,6 +77,32 @@ def login():
     return render_template('login.html')
 
 
+# Caso o usuário não esteja autenticado ele será redirecionado para a página de login
+@login_manager.unauthorized_handler
+def unauthorized_callback():
+    flash("Faça o login!")
+    return redirect(url_for('login'))
+
+
+# Tela de logout
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('sobre'))
+
+
+# Página inicial
+@app.route("/pagina_inicial")
+@login_required
+def pagina_inicial():
+    """
+    Página inicial, nela será apresentada a tela de opções
+    :return: Tela inicial
+    """
+    return render_template("pagina_inicial.html", contatos=tb_contato.query.all())
+
+
 @app.route('/')
 def sobre():
     """
@@ -109,11 +141,6 @@ def contato():  # Neste módulo será implementado um sistema de formulários
         db.session.add(contato)
         db.session.commit()
     return render_template("contato.html")
-
-# Caixa de mensagens
-@app.route('/secret_contatos')
-def lista_contatos():
-    return render_template("contatos.html", contatos=tb_contato.query.all())  # contatos_i usada para iterar na pagina html
 
 
 if __name__ == "__main__":  # Bloco de execusão do código principal. A função debug retornará eventuais erros
